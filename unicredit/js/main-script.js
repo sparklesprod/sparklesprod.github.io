@@ -1,5 +1,5 @@
 $(document).ready(function () {
-   console.log('jquery работает. Размер окна: ', $(window).width());
+   console.log('jQuery работает. Размер окна: ', $(window).width());
     var windowWidth = $(window).width();
     var right = 0;
 
