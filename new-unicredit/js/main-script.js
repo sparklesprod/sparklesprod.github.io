@@ -1,7 +1,7 @@
 $(document).ready(function () {
    console.log('jquery работает.');
 
-    /* Scroll Nav */
+    /* Scroll Nav. */
     // $('#fullpage').scrollNav({
     //     sections: 'h2',
     //     showHeadline: false,
