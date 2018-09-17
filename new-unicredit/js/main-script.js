@@ -62,6 +62,7 @@ $(document).ready(function () {
 
    $('#fullpage').fullpage({
        scrollingSpeed: 1000,
+       touchSensitivity: 100,
        autoScrolling: true,
        anchors: ['desc', 'features', 'question', 'tarrifs'],
        menu: '.scroll-nav',
