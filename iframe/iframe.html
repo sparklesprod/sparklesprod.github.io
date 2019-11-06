@@ -17,14 +17,15 @@
         let random = Math.floor(Math.random() * events.length);
         console.log('Имитация асинхронности. Отправим данные через 2 секунд после клика');
         setTimeout(function () {
-            console.log('dispatch', window.parent.dispatchEvent !== undefined);
-            // window.parent.dispatchEvent(new Event('closeForm'));
-            // parent.postMessage(JSON.stringify({
-            //     "event": 'b2p_close_form',
-            //     "data": {
-            //         data: 'some-data'
-            //     }
-            // }), '*')
+            if (!(/o2-retail.orbtest.ru|retail.odobrim.ru/.test(url))) {
+                console.log('parent', parent !== undefined);
+            }
+            parent.postMessage(JSON.stringify({
+                "event": 'b2p_close_form',
+                "data": {
+                    data: 'some-data'
+                }
+            }), '*')
         }, 2000);
     };
 </script>
