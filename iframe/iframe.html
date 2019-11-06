@@ -17,7 +17,7 @@
         let random = Math.floor(Math.random() * events.length);
         console.log('Имитация асинхронности. Отправим данные через 2 секунд после клика');
         setTimeout(function () {
-            if (!(/o2-retail.orbtest.ru|retail.odobrim.ru/.test(url))) {
+            if (!(/o2-retail.orbtest.ru|retail.odobrim.ru/.test(document.referrer))) {
                 console.log('parent', parent !== undefined);
             }
             parent.postMessage(JSON.stringify({
