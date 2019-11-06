@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Iframe</title>
+</head>
+<body>
+
+<button>Botão</button>
+
+<script type="text/javascript">
+
+    const events = ['event-1', 'event-2', 'event-3'];
+
+    document.querySelector('button').onclick = function () {
+        console.log('click');
+        // window.open('file:///B:/Development/Other/ifram-postMessage/index.html', '_parent');
+        let random = Math.floor(Math.random() * events.length);
+        console.log('Имитация асинхронности. Отправим данные через 2 секунд после клика');
+        setTimeout(function () {
+            console.log('Отправили', window.parent);
+            console.log('parent', window.parent !== undefined);
+            console.log('dispatch', window.parent.dispatchEvent !== undefined);
+            window.parent.dispatchEvent(new Event('closeForm'));
+            // parent.postMessage(JSON.stringify({
+            //     "event": 'b2p_close_form',
+            //     "data": {
+            //         data: 'some-data'
+            //     }
+            // }), '*')
+        }, 2000);
+    };
+</script>
+
+</body>
+</html>
