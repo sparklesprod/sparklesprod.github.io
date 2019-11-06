@@ -17,16 +17,16 @@
         let random = Math.floor(Math.random() * events.length);
         console.log('Имитация асинхронности. Отправим данные через 2 секунд после клика');
         setTimeout(function () {
-            console.log('Отправили', parent);
-            console.log('parent', parent !== undefined);
+//             console.log('Отправили', parent);
+//             console.log('parent', parent !== undefined);
 //             console.log('dispatch', window.parent.dispatchEvent !== undefined);
 //             window.parent.dispatchEvent(new Event('closeForm'));
-            // parent.postMessage(JSON.stringify({
-            //     "event": 'b2p_close_form',
-            //     "data": {
-            //         data: 'some-data'
-            //     }
-            // }), '*')
+            parent.postMessage(JSON.stringify({
+                "event": 'b2p_close_form',
+                "data": {
+                    data: 'some-data'
+                }
+            }), '*')
         }, 2000);
     };
 </script>
